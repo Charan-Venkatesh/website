@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dynamic 3D Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Login Section -->
+    <div id="login-section" class="section active">
+      <div class="card">
+        <h1>Welcome</h1>
+        <p>Experience the next-generation 3D form</p>
+        <button id="login-btn" class="glow-btn">Click here to login</button>
+      </div>
+    </div>
+
+    <!-- Registration Form Section -->
+    <div id="form-section" class="section">
+      <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="registration-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" pattern="[A-Za-z\s]{1,15}" required />
+              <small class="hint">Letters and spaces only, max 15</small>
+              <span class="error-message" id="firstName-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" pattern="[A-Za-z\s]{1,15}" required />
+              <small class="hint">Letters and spaces only, max 15</small>
+              <span class="error-message" id="lastName-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" pattern="\d{10}" required />
+              <small class="hint">10 digits</small>
+              <span class="error-message" id="phone-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="altPhone">Alternative Number</label>
+              <input type="tel" id="altPhone" name="altPhone" pattern="\d{10}" />
+              <small class="hint">10 digits (optional)</small>
+              <span class="error-message" id="altPhone-error"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" id="email" name="email" required />
+            <span class="error-message" id="email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="gender" value="male" required /> Male
+              </label>
+              <label>
+                <input type="radio" name="gender" value="female" /> Female
+              </label>
+              <label>
+                <input type="radio" name="gender" value="other" /> Other
+              </label>
+            </div>
+            <span class="error-message" id="gender-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="1" max="120" required />
+            <span class="error-message" id="age-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="2" required></textarea>
+            <span class="error-message" id="address-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="doorNumber">Door Number/Street</label>
+            <input type="text" id="doorNumber" name="doorNumber" required />
+            <span class="error-message" id="doorNumber-error"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="state">State</label>
+              <select id="state" name="state" required>
+                <option value="">Select State</option>
+              </select>
+              <span class="error-message" id="state-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="district">District</label>
+              <select id="district" name="district" disabled required>
+                <option value="">Select District</option>
+              </select>
+              <span class="error-message" id="district-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City</label>
+              <select id="city" name="city" disabled required>
+                <option value="">Select City</option>
+              </select>
+              <span class="error-message" id="city-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="pincode">Pincode</label>
+              <input type="text" id="pincode" name="pincode" pattern="\d{6}" required />
+              <span class="error-message" id="pincode-error"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" rows="3"></textarea>
+          </div>
+
+          <div class="row">
+            <button type="button" class="btn" id="logoutBtn">Logout</button>
+            <button type="submit" class="btn primary">Submit</button>
+          </div>
+
+          <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <script src="index.js" defer></script>
+</body>
+</html>
