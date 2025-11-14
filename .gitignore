@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Old files to ignore
+*.old/
+*.old
+public.old/
+src.old/
+package.json.old
+package-lock.json.old
+README.old.md

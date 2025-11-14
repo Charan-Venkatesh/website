@@ -12,6 +12,14 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Ignore old files:
+    "**/*.old/**",
+    "**/*.old",
+    "**/public.old/**",
+    "**/src.old/**",
+    "package.json.old",
+    "package-lock.json.old",
+    "README.old.md",
   ]),
 ]);
 
