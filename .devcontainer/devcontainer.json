@@ -1,6 +1,6 @@
 {
-  "name": "Dynamic 3D Webpage App",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  "name": "Data Science Portfolio - Next.js",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
   
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
@@ -14,11 +14,16 @@
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "mongodb.mongodb-vscode"
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-typescript-next"
       ],
       "settings": {
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "typescript.tsdk": "node_modules/typescript/lib"
       }
     }
   },
@@ -26,7 +31,7 @@
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": {
-      "label": "Application",
+      "label": "Next.js Dev Server",
       "onAutoForward": "notify"
     }
   },
