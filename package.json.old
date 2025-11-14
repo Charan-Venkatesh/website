@@ -1,0 +1,31 @@
+{
+  "name": "dynamic-3d-webpage-app",
+  "version": "1.0.0",
+  "description": "A dynamic 3D webpage application with user authentication and form handling.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.21.2",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "keywords": [
+    "3D",
+    "webpage",
+    "dynamic",
+    "authentication",
+    "form"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "type": "commonjs"
+}
